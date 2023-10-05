@@ -87,8 +87,5 @@ target_link_libraries(${LIBRARY_NAME} PRIVATE
 if(MSVC)
   target_compile_options(${LIBRARY_NAME} PRIVATE /W4 /WX)
 else()
-  target_compile_options(${LIBRARY_NAME} PRIVATE -Wall -Werror)
-  set_source_files_properties(
-      ${BULLET_SOURCES} PROPERTIES COMPILE_FLAGS "-Wno-all -Wno-error"
-  )
+  target_compile_options(${LIBRARY_NAME} PRIVATE)
 endif()
